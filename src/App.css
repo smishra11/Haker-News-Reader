@@ -1,13 +1,27 @@
 body {
-  background-color: #f8f8f8 !important;
+  background-color: #181a1b !important;
+  overflow-x: hidden;
 }
 .header {
-  background-color: rgb(255, 102, 0);
-  border-radius: 5px;
+  background-color: #2e2e2e;
+  overflow: hidden;
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 1;
 }
 .font_14 {
   font-size: 16px;
 }
 .haker_item {
   padding: 0.3rem 1rem !important;
+}
+.news_title {
+  text-decoration: none;
+  color: rgb(226, 226, 226);
+  font-size: 14px;
+  text-decoration: none !important;
+}
+.news_items {
+  margin-top: 4rem !important;
 }

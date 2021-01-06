@@ -2,21 +2,15 @@ import React from 'react';
 
 const Haker = ({ data, handleClick }) => {
   return (
-    <div className="list-group mt-3">
+    <div className="list-group container news_items">
       {data.map((news_item) => (
         <div
           className="list-group-item list-group-item-action flex-column align-items-start haker_item"
           key={news_item.id}
+          style={{ backgroundColor: '#2e2e2e' }}
         >
           <p className="mb-0">
-            <a
-              href={news_item.url}
-              style={{
-                textDecoration: 'none',
-                color: 'black',
-                fontSize: '14px',
-              }}
-            >
+            <a href={news_item.url} className="news_title">
               {news_item.title}
             </a>
           </p>
@@ -26,9 +20,9 @@ const Haker = ({ data, handleClick }) => {
           </small>
         </div>
       ))}
-      <div className="d-flex justify-content-center mt-3">
+      <div className="d-flex justify-content-center mt-3 mb-3">
         <button className="btn btn-outline-info btn-sm" onClick={handleClick}>
-          Click to load more
+          Load more...
         </button>
       </div>
     </div>
