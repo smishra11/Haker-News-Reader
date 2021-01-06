@@ -5,8 +5,9 @@ import Spinner from './components/Spinner';
 
 const App = () => {
   const [posts, setPosts] = useState([]);
-  const [start, setStart] = useState(0);
+  const [start] = useState(0);
   const [end, setEnd] = useState(10);
+  const [loading, setLoading] = useState(false);
 
   const loadingData = (allData, start, end) => {
     const promises = allData
@@ -21,6 +22,7 @@ const App = () => {
 
   useEffect(() => {
     async function getTopStories() {
+      setLoading(true);
       const url = 'https://hacker-news.firebaseio.com/v0/topstories.json';
       try {
         const response = await fetch(url);
@@ -31,17 +33,24 @@ const App = () => {
         const promises = await loadingData(allData, start, end);
         const result = await Promise.all(promises);
         setPosts(result);
+        setLoading(false);
       } catch (err) {
+        setLoading(false);
         console.error(err);
       }
     }
     getTopStories();
-  }, [end]);
+  }, [end, start]);
 
   const handleClick = () => {
+    setLoading(true);
     console.log('Showing data for next items');
     setEnd(end + 10);
   };
+
+  setTimeout(() => {
+    window.location.reload();
+  }, 30000);
 
   return (
     <div>
@@ -56,7 +65,7 @@ const App = () => {
       {posts.length === 0 ? (
         <Spinner />
       ) : (
-        <Haker data={posts} handleClick={handleClick} />
+        <Haker data={posts} handleClick={handleClick} loading={loading} />
       )}
     </div>
   );
