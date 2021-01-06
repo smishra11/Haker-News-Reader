@@ -3,7 +3,7 @@ body {
   overflow-x: hidden;
 }
 .header {
-  background-color: #2e2e2e;
+  background-color: #292929;
   overflow: hidden;
   position: fixed !important;
   top: 0;

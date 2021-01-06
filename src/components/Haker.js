@@ -10,7 +10,12 @@ const Haker = ({ data, handleClick }) => {
           style={{ backgroundColor: '#2e2e2e' }}
         >
           <p className="mb-0">
-            <a href={news_item.url} className="news_title">
+            <a
+              href={news_item.url}
+              className="news_title"
+              target="_blank"
+              rel="noreferrer"
+            >
               {news_item.title}
             </a>
           </p>
