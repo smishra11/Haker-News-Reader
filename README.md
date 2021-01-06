@@ -1,4 +1,5 @@
-### `Demo` - https://haker-news.netlify.app/
+## Deploy Link
+### `Live` - https://haker-news.netlify.app/
 
 # Getting Started with Create React App
 
